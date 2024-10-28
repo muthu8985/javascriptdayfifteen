@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js dayfifteen</title>
+  </head>
+  <body>
+    <!-- map -->
+    <script>
+      const fruits = new Map([
+        ["apples", 100],
+        ["banana", 200],
+        ["carrot", 300],
+        ["oranges", 400],
+      ]);
+      let numb = fruits.get("apples");
+      // find instance of
+      console.log(fruits instanceof Map);
+      console.log(numb);
+    </script>
+    <script>
+      // set map values
+      const desc = new Map();
+      desc.set("name", "muthu");
+      desc.set("age", 23);
+      desc.set("vote", 18);
+      console.log(desc);
+      //  The get() method gets the value of a key in a Map:
+      document.write(desc.get("age"));
+      document.write(typeof desc);
+    </script>
+    <p id="demo"></p>
+    <script>
+      // group by array
+      const fruitgrp = [
+        { name: "apples", quantity: 300 },
+        { name: "bananas", quantity: 500 },
+        { name: "oranges", quantity: 200 },
+        { name: "kiwi", quantity: 150 },
+      ];
+
+      // Callback function to select low volumes
+      function myCallback({ quantity }) {
+        return quantity > 200 ? "ok" : "low";
+      }
+
+      // Group by ok and low
+      const result = Map.groupBy(fruitgrp, myCallback);
+
+      let text = "These fruits are Ok: <br>";
+      for (let x of result.get("ok")) {
+        text += x.name + " " + x.quantity + "<br>";
+      }
+      text += "<br>These fruits are low: <br>";
+      for (let x of result.get("low")) {
+        text += x.name + " " + x.quantity + "<br>";
+      }
+      document.getElementById("demo").innerHTML = text;
+
+      console.log(result.get("ok"));
+    </script>
+    <p id="demo1"></p>
+    <!-- finding the type of the  js operators -->
+    <script>
+      document.getElementById("demo1").innerHTML =
+        "'John' is " +
+        typeof "John" +
+        "<br><br>" +
+        "('John' + 'Doe') is " +
+        typeof ("John" + "Doe") +
+        "<br><br>" +
+        "3.14 is " +
+        typeof 3.14 +
+        "<br><br>" +
+        "33 is " +
+        typeof 33 +
+        "<br><br>" +
+        "(33 + 66) is " +
+        typeof (33 + 66) +
+        "<br><br>" +
+        "NaN is " +
+        typeof NaN +
+        "<br><br>" +
+        "true is " +
+        typeof true +
+        "<br><br>" +
+        "false is " +
+        typeof false +
+        "<br><br>" +
+        "1234n is " +
+        typeof 1234n +
+        "<br><br>" +
+        "Symbol() is " +
+        typeof Symbol() +
+        "<br><br>" +
+        "x is " +
+        typeof x;
+      //    "null is " + typeof null;
+      //    null is an object
+    </script>
+    <p id="demo2"></p>
+    <script>
+      // The instanceof operator returns true if an object is an instance of a specified object type:
+
+      // Create a Date
+      const time = new Date();
+
+      document.getElementById("demo2").innerHTML =
+        "Date: " + (time instanceof Date);
+    </script>
+    <p id="demo3"></p>
+    <script>
+      let car;
+      document.getElementById("demo3").innerHTML =
+        "<p>The value of car is " + car + "<p>The typeof car is " + typeof car;
+    </script>
+    <p>An empty value has nothing to do with undefined.</p>
+
+    <p>Unfortunately, in JavaScript, the data type of null is an object.</p>
+
+    <p>undefined and null are equal in value but different in type:</p>
+
+    <p>
+      The constructor property returns the constructor function for all
+      JavaScript variables.
+    </p>
+
+    <p>
+      Method Description getDate() Get the day as a number (1-31) getDay() Get
+      the weekday a number (0-6) getFullYear() Get the four digit year (yyyy)
+      getHours() Get the hour (0-23) getMilliseconds() Get the milliseconds
+      (0-999) getMinutes() Get the minutes (0-59) getMonth() Get the month
+      (0-11) getSeconds() Get the seconds (0-59) getTime() Get the time
+      (milliseconds since January 1, 1970)
+    </p>
+    <script src="index.js"></script>
+  </body>
+</html>
